@@ -25,6 +25,6 @@ function llp_frontend_scripts(): void {
 
   // MailChimp's integration
   $mailchimp_integration_src = sprintf('%s/assets/js/mailchimp.js', get_template_directory());
-  wp_enqueue_script( 'mailchimp-integration', $mailchimp_integration_src, array(), null, true );
+  wp_enqueue_script( 'mcjs', $mailchimp_integration_src, array(), null, true );
 }
 add_action( 'wp_enqueue_scripts', 'llp_frontend_scripts' );
