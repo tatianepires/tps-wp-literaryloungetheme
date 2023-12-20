@@ -22,9 +22,5 @@ function llp_frontend_scripts(): void {
 
 	// Theme's CSS
 	wp_enqueue_style('llp', get_stylesheet_directory_uri() . '/css/styles.min.css', array('twentytwentyfour'));
-
-  // MailChimp's integration
-  $mailchimp_integration_src = sprintf('%s/assets/js/mailchimp.js', get_template_directory());
-  wp_enqueue_script( 'mcjs', $mailchimp_integration_src, array(), null, true );
 }
 add_action( 'wp_enqueue_scripts', 'llp_frontend_scripts' );
