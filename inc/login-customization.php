@@ -15,11 +15,11 @@ function llp_custom_login_image() {
             font-weight: bold;
             text-indent: unset;
             background-image: url($img_url);
-            width: $img_size;
-            height: $img_size;
+            width: auto;
+            height: auto;
             background-size: $img_size $img_size;
             background-repeat: no-repeat;
-            padding-top: $img_size;
+            padding-top: 100px;
         }
         #login h1 a, .login h1 a:focus,
         #login h1 a, .login h1 a:hover {
