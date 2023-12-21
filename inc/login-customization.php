@@ -1,21 +1,19 @@
 <?php
 /*
- * Customize logo
+ * Customize logo and text
  */
-add_action('login_head', 'llp_custom_login_style');
-function llp_custom_login_style() {
-	$style_src = sprintf('%s/assets/css/login.min.css', get_stylesheet_directory_uri());
-	wp_register_style('llp_login_style', $style_src);
-	wp_enqueue_style("llp_login_style");
-}
-
 add_action( 'login_enqueue_scripts', 'llp_custom_login_image' );
 function llp_custom_login_image() {
     $img_url = sprintf('%s/assets/img/logo-128x128.png', get_stylesheet_directory_uri());
     $img_size = '128px';
     echo <<< STYLE_BLOCk
         <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do');
         #login h1 a, .login h1 a {
+            font-family: 'Nothing You Could Do', cursive;
+            font-size: 2rem;
+            font-weight: bold;
+            text-indent: unset;
             background-image: url($img_url);
             width: $img_size;
             height: $img_size;
