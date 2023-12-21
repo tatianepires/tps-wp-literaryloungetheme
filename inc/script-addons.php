@@ -17,8 +17,11 @@ function llp_script_addon_filter($tag, $handle, $src){
 	// we need to check if the handle is equals the script
 	// we want to filter. If yes, than adds the noscript element
 	if ( 'google-fonts' === $handle ){
-		$preload = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
-		$tag = $tag . $preload;
+		$preconnect = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
+		$preload = str_replace('rel="stylesheet"', 'rel="preload" as="style"', $tag);
+		$noscript = sprintf('<noscript>%s</noscript>', $tag);
+
+		$tag = $preconnect . $preload . $noscript;
 	}
 	return $tag;
 }

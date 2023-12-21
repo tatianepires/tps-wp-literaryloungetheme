@@ -12,7 +12,7 @@ function llp_frontend_scripts(): void {
 
 	$third_party_styles = array(
 		'google-fonts' => array(
-			'src' => 'https://fonts.googleapis.com/css?family=Nothing+You+Could+Do',
+			'src' => 'https://fonts.googleapis.com/css?family=Nothing+You+Could+Do&display=swap',
 		),
 	);
 
@@ -22,10 +22,16 @@ function llp_frontend_scripts(): void {
 	}
 
 	// Theme's CSS
-	wp_enqueue_style('llp', get_stylesheet_directory_uri() . '/css/styles.min.css', array('twentytwentyfour'));
+	$style_src = sprintf('%s/css/styles.min.css', get_stylesheet_directory_uri());
+	wp_enqueue_style('llp', $style_src, array('twentytwentyfour'));
 }
 
 add_action( 'wp_head', 'llp_favicon');
-function llp_favicon() {
-	printf('<link rel="shortcut icon" type="image/jpg" href="%s/favicon.ico"/>', get_stylesheet_directory_uri(), );
+function llp_favicon(): void {
+	printf('<link rel="shortcut icon" type="image/jpg" href="%s/favicon.ico"/>', get_stylesheet_directory_uri());
+}
+
+add_action( 'admin_head', 'llp_favicon_admin' );
+function llp_favicon_admin() {
+	printf('<link rel="shortcut icon" type="image/jpg" href="%s/favicon.ico"/>', get_stylesheet_directory_uri());
 }
