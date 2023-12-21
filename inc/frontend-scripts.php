@@ -22,7 +22,7 @@ function llp_frontend_scripts(): void {
 	}
 
 	// Theme's CSS
-	$style_src = sprintf('%s/css/styles.min.css', get_stylesheet_directory_uri());
+	$style_src = sprintf('%s/assets/css/styles.min.css', get_stylesheet_directory_uri());
 	wp_enqueue_style('llp', $style_src, array('twentytwentyfour'));
 }
 
@@ -32,6 +32,6 @@ function llp_favicon(): void {
 }
 
 add_action( 'admin_head', 'llp_favicon_admin' );
-function llp_favicon_admin() {
+function llp_favicon_admin(): void {
 	printf('<link rel="shortcut icon" type="image/jpg" href="%s/favicon.ico"/>', get_stylesheet_directory_uri());
 }

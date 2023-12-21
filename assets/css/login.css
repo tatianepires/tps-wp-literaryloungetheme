@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+
+#login h1 a, .login h1 a {
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 2rem;
+    font-weight: bold;
+    text-indent: unset;
+    width: auto;
+    height: auto;
+}
+#login h1 a, .login h1 a:focus,
+#login h1 a, .login h1 a:hover {
+    border: none;
+    outline: 0 !important;
+}

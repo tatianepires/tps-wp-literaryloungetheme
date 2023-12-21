@@ -9,3 +9,4 @@
 // =============================================================================
 
 require_once get_stylesheet_directory() . '/inc/frontend-scripts.php';
+require_once get_stylesheet_directory() . '/inc/login-customization.php';
